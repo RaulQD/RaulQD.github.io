@@ -349,7 +349,6 @@ margin-bottom: 4rem;
   border: 2px solid var(--first-color-alt);
   color: var(--first-color);
 }
-
 /*----- ABOUT ----- */
 .about__container {
   row-gap: 4rem;
@@ -885,10 +884,9 @@ margin-bottom: 4rem;
 
   .about__box {
     text-align: center;
-    padding: 0.5rem 2rem;
   }
   .about__icon{
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   
   .about__description {
