@@ -709,7 +709,9 @@ margin-bottom: 4rem;
 }
 
 @media screen and (max-width: 320px) {
-
+  .nav__logo {
+    font-size: 1.8rem;
+  }
   .home__buttons {
     flex-direction: column;
   }
