@@ -49,19 +49,25 @@ function scrollActive() {
 window.addEventListener('scroll', scrollActive);
 
 /**------ SCROLL UP---- */
-/** ----- RESPONSIVE SIDEBAR MENU MOBIL */
+/** ----- RESPONSIVE SIDEBAR MENU MOBILE */
 
-const showMenu = (toggleId, navId) => {
+const showMenu = (toggleId, navId, closeId) => {
   const toggle = document.getElementById(toggleId),
-    nav = document.getElementById(navId)
+    nav = document.getElementById(navId),
+    closeID = document.getElementById(closeId);
 
-  if (toggle && nav) {
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('show');
-    })
+    if (toggle && nav ) {
+        toggle.addEventListener('click', () => {
+            nav.classList.toggle('show');
+        })
+    }
+    if(closeID && nav){
+        closeID.addEventListener('click', () =>{
+            nav.classList.remove('show');
+        })
   }
 }
-showMenu('nav-toggle', 'nav-menu');
+showMenu('nav-toggle', 'nav-menu','nav-close');
 
 /*---- ACTIVAR Y REMOVER MENU ---- */
 const navLink = document.querySelectorAll('.nav__link');
