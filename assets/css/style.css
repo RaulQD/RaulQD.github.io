@@ -236,7 +236,7 @@ margin-bottom: 4rem;
 /*------ HOME -----*/   
 .home__container {
   position: relative;
-  row-gap: 7.2rem;
+  row-gap: 6.2rem;
   padding-top: 3.2rem;
 }
 
@@ -258,7 +258,7 @@ margin-bottom: 4rem;
 
 .home__education {
   color: var(--text-color);
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .home__name {
@@ -849,7 +849,7 @@ margin-bottom: 4rem;
         margin-right: auto;
     }
     .section {
-        padding: 12.4rem 0 1.6rem;
+        padding: 10.4rem 0 1.6rem;
     }
 
     .section__title {
