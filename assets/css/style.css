@@ -188,10 +188,10 @@ margin-bottom: 4rem;
   top: 3.2rem;
   transition: 0.3s;
 }
-.nav__toggle {
-  color: var(--title-color);
-  font-size: 2rem;
-  cursor: pointer;
+    .nav__toggle {
+    color: var(--title-color);
+    font-size: 2rem;
+    cursor: pointer;
 }
 .close__toggle{
     color:var(--title-color);
