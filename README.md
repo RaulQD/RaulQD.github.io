@@ -4,6 +4,5 @@
 ## You can find in my Website
 
 * About me
-* Skills and abilities
+* Skills
 * Projects
-
