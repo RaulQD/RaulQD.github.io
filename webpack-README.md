@@ -49,11 +49,10 @@ Dentro del objecto module.exports debes crear 3 cosas:
 - **FILENAME** --> nombre del archivo, debes poner nombres de forma dinamicas.
 
 Al momento de de ejecutir el "NPM RUN BUILD" se creara un archivo definido en el WEBPACK.CONFIG.JS
-para que no se cree archivos tras otro debes usar lo siguiente:
-En el package.json dentro del **OBJECTO SCRIPT** debes poner:
+para que no se cree archivos tras otro debes installar la dependencia **npm install --save-dev rimraf**
 
 ```Javascript
 "SCRIPT":{
-"build" : "rm -rf dist && webpack";
+"build" : "rimraf dist && webpack";
 }
 ```
