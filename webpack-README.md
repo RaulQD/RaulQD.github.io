@@ -1,18 +1,18 @@
 > [webpack.js.org](https://webpack.js.org/)
 
-## ¿Que es WEBPACK?
+# ¿Que es WEBPACK?
 
 WEBPACK es un parque de módulos estaticos para aplicaciones JavaScript modernas.
 Cuando webpack procesa su aplicación, crea internamente un gráfico de dependencia a partir de uno a más puntos de entrada y luego combina todos los modules que necesita su proyecto en uno o más paquetes, que son activos estaticos desde los que servir su contenido.
 
-### Instalar WEBPACK
+## Instalar WEBPACK
 
 Para instalar WEBPACK debes ingresar los siguientes comandos
 
 npm init -y --> para que cree el "package.json"
 npm install --save-dev webpack-cli webpack --> para instalar las dependencias de webpack y poder usarlo.
 
-### Configuración del Archivo webpack.config.js
+## Configuración del Archivo webpack.config.js
 
 Tenemos que crear un archivo de configuración para que actue como nosotros nos interesa. Necesitamos configurar webpack, el archivo debe tener un nombre muy contreto y particular
 webpack.config.js.
@@ -57,7 +57,7 @@ para que no se cree archivos tras otro debes installar la dependencia **npm inst
 }
 ```
 
-### INSTALACIÓN DE BABEL
+## INSTALACIÓN DE BABEL
 
 Instalar BABEL sirve para traducir codigo nuevo a codigo compatible con todos los navegadores.
 
