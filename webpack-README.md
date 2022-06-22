@@ -12,6 +12,7 @@ Tenemos que crear un archivo de configuración para que actue como nosotros nos 
 webpack.config.js.
 
 En el webpack.config.js debemos exportar un objeto de configuración.
+
 SINTAXIS:
 
 module.exports = {
@@ -19,5 +20,6 @@ module.exports = {
 }
 
 dentro del objecto module.exports debes crear 3 cosas:
-**MODE** --> MODO DE FUNCIONAMIENTO,( por defecto webpack funciona en modo PRODUCCIÓN)
-ENTRY POINT--> DESDE DONDE EMPIEZA LA APLICACIÓN
+
+- **MODE** --> MODO DE FUNCIONAMIENTO,( por defecto webpack funciona en modo PRODUCCIÓN)
+- ENTRY POINT--> DESDE DONDE EMPIEZA LA APLICACIÓN
