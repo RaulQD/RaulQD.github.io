@@ -56,3 +56,13 @@ para que no se cree archivos tras otro debes installar la dependencia **npm inst
 "build" : "rimraf dist && webpack";
 }
 ```
+
+### INSTALACIÓN DE BABEL
+
+Instalar BABEL sirve para traducir codigo nuevo a codigo compatible con todos los navegadores.
+
+- INSTALAR BABEL:
+
+```npm
+npm install --save-dev @babel/core @babel/preset-env babel-loader
+```
