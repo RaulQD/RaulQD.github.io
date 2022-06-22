@@ -2,20 +2,19 @@
 
 # ¿Que es WEBPACK?
 
-WEBPACK es un parque de módulos estaticos para aplicaciones JavaScript modernas.
-Cuando webpack procesa su aplicación, crea internamente un gráfico de dependencia a partir de uno a más puntos de entrada y luego combina todos los modules que necesita su proyecto en uno o más paquetes, que son activos estaticos desde los que servir su contenido.
+WEBPACK es un **empaquetador de módulos** estaticos para aplicaciones JavaScript modernas.
+Cuando webpack procesa su aplicación, te permite generar un **archivo único** con todos aquellos **MODULES** que necesita tu aplicación para funcionar, es decir, te permite incluid todos tus archicos javascript.js en un único arvhico.
 
 ## Instalar WEBPACK
 
-Para instalar WEBPACK debes ingresar los siguientes comandos
+Para instalar WEBPACK debes ingresar los siguientes comandos:
 
-npm init -y --> para que cree el "package.json"
+npm init -y --> para crear el "package.json"
 npm install --save-dev webpack-cli webpack --> para instalar las dependencias de webpack y poder usarlo.
 
 ## Configuración del Archivo webpack.config.js
 
-Tenemos que crear un archivo de configuración para que actue como nosotros nos interesa. Necesitamos configurar webpack, el archivo debe tener un nombre muy contreto y particular
-webpack.config.js.
+Tenemos que crear un archivo de configuración para que actue como nosotros queramos. Necesitamos configurar webpack, el archivo debe tener un nombre muy contreto y particular webpack.config.js.
 
 En el webpack.config.js debemos exportar un objeto de configuración.
 
@@ -40,7 +39,7 @@ module.exports = {
 }
 ```
 
-Dentro del objecto module.exports debes crear 3 cosas:
+Dentro del objeto **module.exports** debes crear 3 propiedades:
 
 - **MODE** --> MODO DE FUNCIONAMIENTO,( por defecto webpack funciona en modo PRODUCCIÓN)
 - **ENTRY POINT**--> Donde inicia nuestra aplicación, Es el archivo principal.
@@ -55,8 +54,8 @@ SE DEBE ESTABLECER 2 OPCIONES:
 
 - **FILENAME** --> nombre del archivo, debes poner nombres de forma dinamicas.
 
-Al momento de de ejecutir el "NPM RUN BUILD" se creara un archivo definido en el **WEBPACK.CONFIG.JS**
-para que no se cree archivos tras otro debes installar la dependencia **npm install --save-dev rimraf**
+Al momento de de ejecutar el **NPM RUN BUIL** se creara un archivo definido en el **WEBPACK.CONFIG.JS**.
+para que no se cree archivos tras otro debes installar la dependencia **npm install --save-dev rimraf**.
 
 ```Javascript
 "SCRIPT":{
@@ -122,3 +121,30 @@ Luego, crearemos un nuevo archivo llamado **.babel.config.js**, para agregar el 
 ```
 
 Este plugin permite transformar el codigo nuevo a codigo compatible con todo los navegadores web.
+
+## PLUGIN HTML-LOADER
+
+Exporta HTML como cadena. HTML se minimiza cuando el compilador lo exige.
+
+### INSTALACIÓN
+
+```npm
+    npm install --save-dev html-loader
+```
+
+Luego debemos agregar el Plugin como una nueva regla(**rules**) en nuestro **webpack.config.js**
+
+Por ejemplo:
+
+```javascript
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
+    ],
+  },
+};
+```
