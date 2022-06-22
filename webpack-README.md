@@ -7,12 +7,17 @@ Cuando webpack procesa su aplicación, crea internamente un gráfico de dependen
 
 ### Instalar WEBPACK
 
+---
+
 Para instalar WEBPACK debes ingresar los siguientes comandos
 
 npm init -y --> para que cree el "package.json"
 npm install --save-dev webpack-cli webpack --> para instalar las dependencias de webpack y poder usarlo.
 
-###Configuración del Archivo webpack.config.js
+### Configuración del Archivo webpack.config.js
+
+---
+
 Tenemos que crear un archivo de configuración para que actue como nosotros nos interesa. Necesitamos configurar webpack, el archivo debe tener un nombre muy contreto y particular
 webpack.config.js.
 
