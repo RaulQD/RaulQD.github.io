@@ -129,9 +129,7 @@ Es un servidor de desarrollo para **WEBPACK**, para poder ver en vivo cada recar
 ### INSTALACIÓN DE WEBPACK-DEV-SERVER
 
 ```npm
-
 npm install --save-dev webpack-dev-server
-
 ```
 
 Luego agregamos un script entorno de desarrollo en **package.json**
