@@ -45,7 +45,11 @@ Dentro del objecto module.exports debes crear 3 cosas:
 - **MODE** --> MODO DE FUNCIONAMIENTO,( por defecto webpack funciona en modo PRODUCCIÓN)
 - **ENTRY POINT**--> DESDE DONDE EMPIEZA LA APLICACIÓN.
 - **OUTPUT POINT** --> PUNTO DE SALIDA, DONDE QUEREMOS QUE ESTE EL ARCHIVO CUANDO SE HAYA PROCESADO. SE DEBE ESTABLECER 2 COSAS:
-- **PATH** --> la ruta donde esta el archivo, debes importarlo al moment de usar "path.join".
+- **PATH** --> la ruta donde esta el archivo, debes importarlo al momento de usar "path.resolve" para resolver una ruta. Debes Usar lo siguiente:
+
+1. \_\_dirname : codigo de node.js
+2. 'public' :la carpeta donde se guardara el archivo final **bundle.js**
+
 - **FILENAME** --> nombre del archivo, debes poner nombres de forma dinamicas.
 
 Al momento de de ejecutir el "NPM RUN BUILD" se creara un archivo definido en el WEBPACK.CONFIG.JS
@@ -65,4 +69,49 @@ Instalar BABEL sirve para traducir codigo nuevo a codigo compatible con todos lo
 
 ```npm
 npm install --save-dev @babel/core @babel/preset-env babel-loader
+```
+
+### DEPENDENCIAS DE BABEL
+
+- @babel/core : Es el nucleo de babel, Es el funcionamiento de babel👍.
+- @babel/preset-env : Permite transformar el codigo nuevo a codigo compatible con otros navegadores👍.
+- babel-loader : permite transpilar archivos de javaScript usando **BABEL** y **WEBPACK**👍.
+
+#### CONFIGURACIÓN DE BABEL
+
+En nuestro **WEBPACK.CONFIG.BABEL** debemos ingresar una palabra clave llamada **MODULE** y vamos a agregar una regla **RULES** y sera un matriz de objetos.
+
+- SINTAXIS:
+
+```javascript
+module.exports = {
+    //mode
+    .....
+    //Entry
+    .....
+    module: {
+        rules:[
+            {
+                test:/\.m?js$/, // Busca todo los archivos que terminan en .js
+                exclude:/(node_modules)/, // NO ES NECESARIO EJECUTAR LA CARPETA NODE_MODULES
+                use: {
+                    loader:'babel-loader',
+                    options:{
+                        "presets":["@babel/preset-env"]
+                    }
+                }
+            },
+        ]
+    }
+    //OUTPUT POINT
+    ....
+}
+```
+
+Luego, crearemos un nuevo archivo llamado **.babel.config.js**, para agregar el plugin @babel/presets-env.
+
+- SINTAXIS
+
+```javascript
+
 ```
