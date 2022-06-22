@@ -122,7 +122,41 @@ Luego, crearemos un nuevo archivo llamado **.babel.config.js**, para agregar el 
 
 Este plugin permite transformar el codigo nuevo a codigo compatible con todo los navegadores web.
 
-## PLUGIN HTML-LOADER
+## ENTERNO DE DESARROLLO - WEBPACK-DEV-SERVER API
+
+Es un servidor de desarrollo para **WEBPACK**, para poder ver en vivo cada recarga que realizamos a nuestro navegador.
+
+### INSTALACIÓN DE WEBPACK-DEV-SERVER
+
+```npm
+
+npm install --save-dev webpack-dev-server
+
+```
+
+Luego agregamos un script entorno de desarrollo en **package.json**
+
+```Javascript
+"SCRIPT":{
+"dev" : "webpack serve --mode=development";
+}
+```
+
+para poder ejecutar el **webpack server** usa el script que creaste en el **package.json**
+
+```npm
+  npm run dev
+```
+
+### CONFIGURAR EL WEBPACK-DEV-SERVER-
+
+puedes agregar diferentes propiedades para la configuración de tú navegador, por ejemplo:
+
+- **OPEN** : true --> sirve para abrir automaticamente el navegador 👍.
+- **OVERLAY** : true --> sirve para abrir un overlay con los errors 👍.
+- **PORT** : 3000 --> En que puerto quisieras abrir tu proyecto 👍.
+
+## PLUGIN HTMLWEBPACKPLUGIN
 
 Exporta HTML como cadena. HTML se minimiza cuando el compilador lo exige.
 
@@ -139,12 +173,16 @@ Por ejemplo:
 ```javascript
 module.exports = {
   module: {
-    rules: [
-      {
-        test: /\.html$/i,
-        loader: "html-loader",
-      },
-    ],
+    .....
+    {
+        plugins :[
+            new HtmlWebpackPlugin({
+                template:'src/index.html'
+            })
+        ]
+    }
+
+    ....
   },
 };
 ```
