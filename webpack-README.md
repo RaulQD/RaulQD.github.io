@@ -43,8 +43,11 @@ module.exports = {
 Dentro del objecto module.exports debes crear 3 cosas:
 
 - **MODE** --> MODO DE FUNCIONAMIENTO,( por defecto webpack funciona en modo PRODUCCIÓN)
-- **ENTRY POINT**--> DESDE DONDE EMPIEZA LA APLICACIÓN.
-- **OUTPUT POINT** --> PUNTO DE SALIDA, DONDE QUEREMOS QUE ESTE EL ARCHIVO CUANDO SE HAYA PROCESADO. SE DEBE ESTABLECER 2 COSAS:
+- **ENTRY POINT**--> Donde inicia nuestra aplicación, Es el archivo principal.
+- **OUTPUT POINT** --> PUNTO DE SALIDA o ARCHIVO DE SALIDA, Toma todo los archivos de Javascript para compilarlo en un solo archivo.js.
+
+SE DEBE ESTABLECER 2 OPCIONES:
+
 - **PATH** --> la ruta donde esta el archivo, debes importarlo al momento de usar "path.resolve" para resolver una ruta. Debes Usar lo siguiente:
 
 1. \_\_dirname : codigo de node.js
@@ -52,7 +55,7 @@ Dentro del objecto module.exports debes crear 3 cosas:
 
 - **FILENAME** --> nombre del archivo, debes poner nombres de forma dinamicas.
 
-Al momento de de ejecutir el "NPM RUN BUILD" se creara un archivo definido en el WEBPACK.CONFIG.JS
+Al momento de de ejecutir el "NPM RUN BUILD" se creara un archivo definido en el **WEBPACK.CONFIG.JS**
 para que no se cree archivos tras otro debes installar la dependencia **npm install --save-dev rimraf**
 
 ```Javascript
@@ -63,7 +66,7 @@ para que no se cree archivos tras otro debes installar la dependencia **npm inst
 
 ## INSTALACIÓN DE BABEL
 
-Instalar BABEL sirve para traducir codigo nuevo a codigo compatible con todos los navegadores.
+Instalar **BABEL** sirve para traducir codigo nuevo a codigo compatible con todos los navegadores.
 
 - INSTALAR BABEL:
 
@@ -113,5 +116,9 @@ Luego, crearemos un nuevo archivo llamado **.babel.config.js**, para agregar el 
 - SINTAXIS
 
 ```javascript
-
+{
+  "presets": ["@babel/preset-env"]
+}
 ```
+
+Este plugin permite transformar el codigo nuevo a codigo compatible con todo los navegadores web.
