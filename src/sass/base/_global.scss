@@ -1,0 +1,42 @@
+@use 'base/variables' as *;
+@use 'base/mixins' as m;
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+*{
+    margin:0;
+    padding:0;
+}
+*,*::after,*::before{
+    box-sizing: inherit;
+}
+body{
+    background-color: $bodyColor;
+    color:$textColor;
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+a{
+    text-decoration: none;
+}
+h1,h2,h3{
+    color:$titleColor;
+    font-weight:$fontSemiBold;
+}
+ul{
+    list-style: none;
+}
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  display: block;
+}

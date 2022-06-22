@@ -1,0 +1,33 @@
+@use 'base/variables' as *;
+@use 'base/mixins' as m;
+
+.section{
+  padding: 7.2rem 0 1.6rem;
+}
+.section__title,
+.section__subtitle{
+  text-align: center;
+}
+.section__title{
+  font-size:$fontSizeH2;
+  color:$firstColor;
+  margin-bottom: 3.2rem;
+}
+.section__subtitle{
+  margin-top: 1.5rem;
+  display: block;
+  font-size:$smallerFontSize;
+  color:$textColorLight;
+}
+.container {
+  max-width: 120rem;
+  width: 95%;
+  margin: 0 auto;
+}
+.grid{
+  display:grid;
+  gap:2rem;
+}
+.main {
+  overflow: hidden;
+}
