@@ -84,9 +84,9 @@ npm install --save-dev @babel/core @babel/preset-env babel-loader
 
 ### DEPENDENCIAS DE BABEL
 
-- @babel/core : Es el nucleo de babel, Es el funcionamiento de babel👍.
-- @babel/preset-env : Permite transformar el codigo nuevo a codigo compatible con otros navegadores👍.
-- babel-loader : permite transpilar archivos de javaScript usando **BABEL** y **WEBPACK**👍.
+- **@babel/core** : Es el nucleo de babel, Es el funcionamiento de babel👍.
+- **@babel/preset-env** : Permite transformar el codigo nuevo a codigo compatible con otros navegadores👍.
+- **babel-loader** : permite transpilar archivos de javaScript usando **BABEL** y **WEBPACK**👍.
 
 #### CONFIGURACIÓN DE BABEL
 
@@ -138,7 +138,7 @@ Inyecta CSS en el DOOM y entiende el estilo del archivo importado **"./style.css
 para instalar usa lo siguiente:
 
 ```npm
-npm install style-loader
+npm install style-loader --save.dev
 ```
 
 agregar la configuración en **webpack.config.js**.
@@ -163,7 +163,7 @@ Los css-loader interpreta @import y url() como un gusta import/require() y los r
 para instalar usa lo siguiente:
 
 ```npm
-npm install css-loader
+npm install css-loader --save.dev
 ```
 
 agregar la configuración en **webpack.config.js**.
@@ -280,6 +280,18 @@ module.exports = {
     ....
   },
 };
+```
+
+## PLUGIN MINI-CSS-EXTRACT-PLUGIN
+
+Este plugin extrae **CSS** en archivos separados. Esto crea un archivo.css por un archivo.js el cual contiene codigo CSS. Esto es compatible demanda de carga de CSS y SourceMaps.
+
+### INSTALACION
+
+para comenzar, debes instalar la siguiente dependencia.
+
+```
+npm install --save-dev mini-css-extract-plugin
 ```
 
 ## HASHEAR LOS ARCHIVOS JS CON WEPACK
