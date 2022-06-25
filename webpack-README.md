@@ -9,8 +9,17 @@ Cuando webpack procesa su aplicación, te permite generar un **archivo único** 
 
 Para instalar WEBPACK debes ingresar los siguientes comandos:
 
-npm init -y --> para crear el "package.json"
-npm install --save-dev webpack-cli webpack --> para instalar las dependencias de webpack y poder usarlo.
+Para crear el **package.json**:
+
+```npm
+npm init -y
+```
+
+para instalar las dependencias de webpack y poder usarlo.
+
+```npm
+npm install --save-dev webpack-cli webpack
+```
 
 ## Configuración del Archivo webpack.config.js
 
@@ -122,6 +131,77 @@ Luego, crearemos un nuevo archivo llamado **.babel.config.js**, para agregar el 
 
 Este plugin permite transformar el codigo nuevo a codigo compatible con todo los navegadores web.
 
+## INSTALAR STYLE-LOADER
+
+Inyecta CSS en el DOOM y entiende el estilo del archivo importado **"./style.css"**
+
+para instalar usa lo siguiente:
+
+```npm
+npm install style-loader
+```
+
+agregar la configuración en **webpack.config.js**.
+
+- SINTAXIS
+
+```javascript
+module: {
+  rules: [
+    {
+      test: /\.css$/i,
+      loader: ["style-loader", "css-loader"],
+    },
+  ];
+}
+```
+
+## INSTALAR CSS-LOADER
+
+Los css-loader interpreta @import y url() como un gusta import/require() y los resolverá.
+
+para instalar usa lo siguiente:
+
+```npm
+npm install css-loader
+```
+
+agregar la configuración en **webpack.config.js**.
+
+```javascript
+module: {
+  rules: [
+    {
+      test: /\.css$/i,
+      loader: ["style-loader", "css-loader"],
+    },
+  ];
+}
+```
+
+## INSTALAR SASS-LOADER
+
+Carga archivos SASS/SCSS y compilalos en CSS.
+
+```
+npm install --save-dev sass sass-loader
+```
+
+para poder usar **SASS** debes añadir el **sass-loader** dentro del rules en el **webpack.config.js**.
+
+Por ejemplo:
+
+```javascript
+module: {
+  rules: [
+    {
+      test: /\.s[ac]ss$/i,
+      loader: ["style-loader", "css-loader", "sass-loader"],
+    },
+  ];
+}
+```
+
 ## ENTERNO DE DESARROLLO - WEBPACK-DEV-SERVER API
 
 Es un servidor de desarrollo para **WEBPACK**, para poder ver en vivo cada recarga que realizamos a nuestro navegador.
@@ -143,7 +223,7 @@ Luego agregamos un script entorno de desarrollo en **package.json**
 para poder ejecutar el **webpack server** usa el script que creaste en el **package.json**
 
 ```npm
-  npm run dev
+npm run dev
 ```
 
 ### CONFIGURAR EL WEBPACK-DEV-SERVER-
@@ -154,6 +234,23 @@ puedes agregar diferentes propiedades para la configuración de tú navegador, p
 - **OVERLAY** : true --> sirve para abrir un overlay con los errors 👍.
 - **PORT** : 3000 --> En que puerto quisieras abrir tu proyecto 👍.
 
+### SINTAXIS
+
+```javascript
+module.exports = {
+  module: {
+    .....
+    devServer:{
+        open:true, // abre el navegador
+        port: 3000, // el puerto donde abre el navegador
+        overlay: true // te mandar el error en la misma pagina(overlay)
+    }
+
+    ....
+  },
+};
+```
+
 ## PLUGIN HTMLWEBPACKPLUGIN
 
 Exporta HTML como cadena. HTML se minimiza cuando el compilador lo exige.
@@ -161,7 +258,7 @@ Exporta HTML como cadena. HTML se minimiza cuando el compilador lo exige.
 ### INSTALACIÓN
 
 ```npm
-    npm install --save-dev html-loader
+npm install --save-dev html-webpack-plugin
 ```
 
 Luego debemos agregar el Plugin como una nueva regla(**rules**) en nuestro **webpack.config.js**
@@ -184,3 +281,58 @@ module.exports = {
   },
 };
 ```
+
+## HASHEAR LOS ARCHIVOS JS CON WEPACK
+
+Para hashear debemos diferenciar entre desarrollo y producción,por que debemos aplicar el hashing en modo de producción y no en el desarrollo.
+
+Como saber si estamos en modo **desarrollo** o en modo **producción**?.
+
+la configuración de webpack puede tambien ser una función que devuelva un objeto, por ejemplo:
+
+- SINTAXIS:
+
+```javascript
+module.exports = () => {
+    return {
+
+        //CODOGIO EN ESTA PARTE
+        ....
+    }
+}
+```
+
+En vez de usar el **module.exports en modo objeto** se puede cambiar a una función usando un return como el ejemplo de arriba y la configuración ponerlo dentro del return.
+
+En la función de configuración de **webpack** debe recibir 2 parametros **env** y **argv**.
+
+- SINTAXIS
+
+```javascript
+module.exports = (env, argv) => {
+  const { mode } = argv;
+  const isProduction = mode === "production";
+
+  return {};
+};
+```
+
+destructuras el mode de los argumentos (**argv**) y despues validamos si **mode** es production o no:
+
+- SINTAXIS
+
+```javascript
+module.exports = (env, argv) => {
+  const { mode } = argv;
+  const isProduction = mode === "production";
+
+  return {
+    output:{
+        filename: isProduction ? '[name].[contenthash].js' // SIRVE PARA HASHEAR EL ARCHIVO.JS
+        path: path.resolve(__dirname, 'public')
+    }
+  };
+};
+```
+
+En el **FILENAME** validamos si es producción o no con el **OPERADOR TERNARIO**, tenemos que usar las **magic strings**. Ente corchetes tenemos que poner el nombre del archivo. **CONTENTHASH**, dependiendo del contenido que tenga el archivo va añadir un **hash** diferente para que lo puedas cachear y cuando cambia ese contenido sera diferente el hash.
