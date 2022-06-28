@@ -146,14 +146,17 @@ agregar la configuración en **webpack.config.js**.
 - SINTAXIS
 
 ```javascript
-module: {
-  rules: [
-    {
-      test: /\.css$/i,
-      loader: ["style-loader", "css-loader"],
+module.exports ={
+    module: {
+        rules: [
+            {
+            test: /\.css$/i,
+            loader: ["style-loader", "css-loader"],
+            },
+        ];
     },
-  ];
 }
+
 ```
 
 ## INSTALAR CSS-LOADER
@@ -169,13 +172,15 @@ npm install css-loader --save.dev
 agregar la configuración en **webpack.config.js**.
 
 ```javascript
-module: {
-  rules: [
-    {
-      test: /\.css$/i,
-      loader: ["style-loader", "css-loader"],
+module.exports ={
+    module: {
+        rules: [
+            {
+            test: /\.css$/i,
+            loader: ["style-loader", "css-loader"],
+            },
+        ];
     },
-  ];
 }
 ```
 
@@ -192,13 +197,47 @@ para poder usar **SASS** debes añadir el **sass-loader** dentro del rules en el
 Por ejemplo:
 
 ```javascript
-module: {
-  rules: [
-    {
-      test: /\.s[ac]ss$/i,
-      loader: ["style-loader", "css-loader", "sass-loader"],
+module.exports ={
+    module: {
+        rules: [
+            {
+            test: /\.css$/i,
+            loader: ["style-loader", "css-loader", "sass-loader"],
+            },
+        ];
     },
-  ];
+}
+```
+
+## POSTCSS AND POSTCSS-LOADER AND POST-PRESET-ENV
+
+### POSTCSS
+
+Es una herramienta moderna para la gestión de codigo CSS que permite aumentar la productividad a la vez que libera al desallorador de trabajos adicionales asi como conocimientos técnicos del estado actual del lenguaje y el soporte de los navegadores.
+
+#### INSTALACIÓN
+
+Para empezar debes instalar las siguientes dependencias.
+
+```
+npm install --save-dev postcss postcss-loader postcss-preset-env
+```
+
+```javascript
+module.exports ={
+    module: {
+        rules: [
+            {
+            test: /\.css$/i,
+            loader: [
+                "style-loader",
+                "css-loader",
+                "sass-loader",
+                "postcss-loader"
+                ],
+            },
+        ];
+    },
 }
 ```
 
@@ -294,13 +333,35 @@ para comenzar, debes instalar la siguiente dependencia.
 npm install --save-dev mini-css-extract-plugin
 ```
 
+Luego implementar el plugin en **webpack.config.js**
+
+```javascript
+module.exports = {
+
+    ....
+     module: {
+        .....
+         {
+            plugins :[ new MiniCssExtractPlugin(),
+                new HtmlWebpackPlugin({
+                template:'src/index.html'
+                })
+            ]
+        }
+        ....
+    },
+
+}
+```
+
 ## HASHEAR LOS ARCHIVOS JS CON WEPACK
 
-Para hashear debemos diferenciar entre desarrollo y producción,por que debemos aplicar el hashing en modo de producción y no en el desarrollo.
+Para hashear debemos diferenciar entre desarrollo y producción por que debemos aplicar el hashing al momento que se lanza a modo producción y no en desarrollo
 
-Como saber si estamos en modo **desarrollo** o en modo **producción**?.
+¿Como saber si estamos en modo **desarrollo** o en modo **producción**?.
+Debemos convertir el webpack de objeto en función, ya que la configuración de webpack puede tambien ser una función que devuelva un objeto.
 
-la configuración de webpack puede tambien ser una función que devuelva un objeto, por ejemplo:
+Por ejemplo:
 
 - SINTAXIS:
 
@@ -325,7 +386,9 @@ module.exports = (env, argv) => {
   const { mode } = argv;
   const isProduction = mode === "production";
 
-  return {};
+  return {
+    ....
+  };
 };
 ```
 
@@ -340,7 +403,7 @@ module.exports = (env, argv) => {
 
   return {
     output:{
-        filename: isProduction ? '[name].[contenthash].js' // SIRVE PARA HASHEAR EL ARCHIVO.JS
+        filename: isProduction ? '[name].[contenthash].js' : 'bundle.js'// SIRVE PARA HASHEAR EL ARCHIVO.JS
         path: path.resolve(__dirname, 'public')
     }
   };

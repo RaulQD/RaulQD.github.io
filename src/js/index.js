@@ -86,12 +86,11 @@ navLink.forEach(n => n.addEventListener('click', linkAction));
 // SCROOL REVEAL
 
 const sr = ScrollReveal({
-    origin: 'top',
     distance: '60px',
     duration: 2500,
     deley: 400
 })
 
 sr.reveal(`.home__data`);
-sr.reveal(`.home__handle`, { delay: 700 });
+sr.reveal(`.home__handle`, { delay: 700, origin: 'top' });
 sr.reveal(`.home__social, .home__arrow`, { delay: 700, origin: 'bottom' });
