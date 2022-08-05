@@ -1,4 +1,4 @@
-const linkWork = document.querySelectorAll('.project__item');
+
 const header = document.querySelector('header');
 /** ----SCROLL HEADER -----*/
 function scrollHeader() {
@@ -9,29 +9,11 @@ function scrollHeader() {
     }
 }
 window.addEventListener('scroll', scrollHeader);
-
-// /**----- FILTER MIX ---- */
-// let mixerPortfolio = mixitup('.project__container', {
-//   selectors: {
-//     target: '.project__card'
-//   },
-//   animation: {
-//     duration: 300
-//   }
-// });
-// /**---- ACTIVAR LINK WORK */
-
-// function activeWork() {
-//   linkWork.forEach(active => active.classList.remove('active-work'));
-//   this.classList.add('active-work');
-// }
-// linkWork.forEach(link => link.addEventListener('click', activeWork));
-
-// /**----SCROLL  ----- */
+/**----SCROLL  ----- */
 
 const sections = document.querySelectorAll('section[id]');
 function scrollActive() {
-    const scrollY = window.pageYOffset;
+    const scrollY = window.scrollY;
 
     sections.forEach(current => {
 
@@ -49,6 +31,17 @@ function scrollActive() {
 window.addEventListener('scroll', scrollActive);
 
 /**------ SCROLL UP---- */
+function scrollUp() {
+    const scrollUp = document.querySelector('#scroll-up');
+    if (this.scrollY >= 550) {
+        scrollUp.classList.add('show-scroll');
+    } else {
+        scrollUp.classList.remove('show-scroll');
+    }
+
+}
+window.addEventListener('scroll', scrollUp);
+
 /** ----- RESPONSIVE SIDEBAR MENU MOBILE */
 
 const showMenu = (toggleId, navId, closeId) => {
