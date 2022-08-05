@@ -1043,7 +1043,7 @@ img {
     }
 
     .skill__container {
-        grid-template-columns: repeat(1, 450px);
+        grid-template-columns: repeat(1, 400px);
         /* column-gap: 4.8rem; */
     }
 
