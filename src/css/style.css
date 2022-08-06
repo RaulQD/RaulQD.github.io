@@ -284,11 +284,12 @@ img {
 
 .home__education {
     color: var(--text-color);
-    /* margin-bottom: 3rem; */
+    margin-bottom: 3rem;
 }
 
 .home__name {
     font-size: var(--biggest-font-size);
+    margin-bottom: 2rem;
 }
 
 .home__img {
@@ -828,9 +829,9 @@ img {
         height: 253px;
     }
 
-    .home__img {
+    /* .home__img {
         width: 130px;
-    }
+    } */
 
     .about__info {
         grid-template-columns: repeat(2, 1fr);
@@ -927,6 +928,10 @@ img {
 
     .contact__card-icon {
         font-size: 4rem;
+    }
+
+    .footer__social {
+        margin-bottom: 0;
     }
 
     /* .contact__form {
