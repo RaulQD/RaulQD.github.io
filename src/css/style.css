@@ -284,7 +284,7 @@ img {
 
 .home__education {
     color: var(--text-color);
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
 }
 
 .home__name {
@@ -397,6 +397,18 @@ img {
 
 .about__data {
     text-align: center;
+}
+
+.about__dev-title {
+    color: var(--first-color);
+    margin-bottom: 3rem;
+}
+
+.about__dev-info {
+    font-size: 3.5rem;
+    color: var(--title-color);
+    font-weight: bold;
+    margin-bottom: 2rem;
 }
 
 .about__info {
@@ -692,6 +704,27 @@ img {
 } */
 
 /*---------FOOTER  ------*/
+.footer__social {
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 2rem;
+}
+
+.footer__social-link {
+    background: var(--container-color);
+    padding: 0.5rem;
+    color: var(--first-color);
+    font-size: 2rem;
+    border-radius: 0.4rem;
+    display: inline-flex;
+    transition: .3s ease-in-out;
+}
+
+.footer__social-link:hover {
+    background: var(--first-color);
+    color: var(--title-color);
+}
+
 /* .footer {
     background-color: var(--first-color);
 }
@@ -717,20 +750,7 @@ img {
     margin-bottom: 3.6rem
 }
 
-.footer__social {
-    display: flex;
-    justify-content: center;
-    column-gap: 2rem;
-}
 
-.footer__social-link {
-    background: var(--body-color);
-    padding: 0.4rem;
-    color: var(--first-color);
-    font-size: 1.6rem;
-    border-radius: 0.4rem;
-    display: inline-flex;
-}
 
 .footer__copy {
     display: block;
@@ -1007,9 +1027,11 @@ img {
 
     .about__container {
         grid-template-columns: repeat(2, 1fr);
-        align-items: center;
+        /* align-items: center; */
         column-gap: 6.4rem;
     }
+
+
 
     .about__title {
         font-size: var(--h3-font-size);
