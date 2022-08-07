@@ -756,7 +756,7 @@ img {
     padding: 3rem;
     text-align: center;
     color: var(--title-color);
-    font-size: var(--normal-font-size);
+    font-size: var(--small-font-size);
 }
 
 .footer__copy a {
