@@ -3,7 +3,7 @@
 # ¿Que es WEBPACK?
 
 WEBPACK es un **empaquetador de módulos** estaticos para aplicaciones JavaScript modernas.
-Cuando webpack procesa su aplicación, te permite generar un **archivo único** con todos aquellos **MODULES** que necesita tu aplicación para funcionar, es decir, te permite incluir todos tus archicos javascript.js en un único arvhico.
+Cuando webpack procesa su aplicación, te permite generar un **archivo único** con todos aquellos **MODULES** que necesita tu aplicación para funcionar, es decir, te permite incluir todos tus archicos javascript.js en un único archiv0o.
 
 ## Instalar WEBPACK
 
