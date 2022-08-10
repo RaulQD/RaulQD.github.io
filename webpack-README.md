@@ -282,7 +282,10 @@ module.exports = {
     devServer:{
         open:true, // abre el navegador
         port: 3000, // el puerto donde abre el navegador
-        overlay: true // te mandar el error en la misma pagina(overlay)
+        client:{
+            overlay: true // te mandar el error en la misma pagina(overlay)
+        }
+       
     }
 
     ....
