@@ -401,7 +401,7 @@ destructuras el mode de los argumentos (**argv**) y despues validamos si **mode*
 
 ```javascript
 module.exports = (env, argv) => {
-  const { mode } = argv;
+  const { mode } = argv; //DESTRUCTURACIÓN DEL MODE DE LA WEBPACK.CONFIG.JS
   const isProduction = mode === "production";
 
   return {
@@ -413,4 +413,4 @@ module.exports = (env, argv) => {
 };
 ```
 
-En el **FILENAME** validamos si es producción o no con el **OPERADOR TERNARIO**, tenemos que usar las **magic strings**. Ente corchetes tenemos que poner el nombre del archivo. **CONTENTHASH**, dependiendo del contenido que tenga el archivo va añadir un **hash** diferente para que lo puedas cachear y cuando cambia ese contenido sera diferente el hash.
+Lo que nos dira si es **PRODUCTION" son los **ARGV**. Tenemos que destructurar el **mode** de los argumentos. Despues, creamos una constante igualando si el mode es igual a **PRODUCTION", luego en el **FILENAME** validamos si es producción o no con el **OPERADOR TERNARIO**, tenemos que usar las **magic strings**. Entre corchetes tenemos que poner el nombre del archivo. **CONTENTHASH**, dependiendo del contenido que tenga el archivo va añadir un **hash** diferente para que lo puedas cachear y cuando cambia ese contenido sera diferente el hash.
