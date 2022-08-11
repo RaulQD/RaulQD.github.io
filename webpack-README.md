@@ -161,7 +161,7 @@ module.exports ={
 
 ## INSTALAR CSS-LOADER
 
-Los css-loader interpreta @import y url() como un gusta import/require() y los resolverá.
+Los css-loader interpreta @import y url() como un import/require() y los resolverá.
 
 para instalar usa lo siguiente:
 
