@@ -79,7 +79,12 @@
                     </div> -->
                 </div>
                 <div class="home__handle">
-                    <img src="src/img/fotocolores.webp" alt="foto2" class="home__img" />
+                    <picture>
+                        <!-- <source srcset="src/img/fotocolores.avif " type="image/avif"> -->
+                        <source srcset="src/img/fotocolores.webp " type="image/webp">
+                        <img loading="lazy" src="src/img/fotocolores.png" alt="foto2" class="home__img">
+                    </picture>
+                    <!-- <img src="src/img/fotocolores.png" alt="foto2" class="home__img" /> -->
                 </div>
                 <div class="home__social">
                     <a href="https://www.linkedin.com/in/raul-kevin-quispe-diaz/" class="home__social-link"

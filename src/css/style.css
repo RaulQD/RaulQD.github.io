@@ -85,6 +85,7 @@ img {
     max-width: 100%;
     height: auto;
     width: 100%;
+    display: block;
 }
 
 /*------- REUSABLE CSS CLASSES ----*/
@@ -557,6 +558,7 @@ img {
     border-radius: 16px;
     margin-bottom: 1.2rem;
     overflow: hidden;
+    width: 100%;
 }
 
 .project__title {
@@ -828,10 +830,6 @@ img {
         width: 150px;
         height: 253px;
     }
-
-    /* .home__img {
-        width: 130px;
-    } */
 
     .about__info {
         grid-template-columns: repeat(2, 1fr);
