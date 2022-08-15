@@ -89,7 +89,7 @@ img {
 
 /*------- REUSABLE CSS CLASSES ----*/
 .section {
-    padding: 7.2rem 0 1.6rem;
+    padding: 9.2rem 0 1.6rem;
 }
 
 .section__title,
@@ -999,7 +999,7 @@ img {
     }
 
     .section {
-        padding: 11.4rem 0 1.6rem;
+        padding: 12.4rem 0 1.6rem;
     }
 
     .section__title {
