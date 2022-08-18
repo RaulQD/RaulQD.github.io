@@ -451,7 +451,7 @@ img {
 }
 
 .skill__content {
-    background: var(--container-color);
+    background-color: var(--container-color);
     padding: 2.4rem;
     border-radius: 2rem;
 }
@@ -461,7 +461,7 @@ img {
     font-weight: var(--font-medium);
     color: var(--first-color);
     text-align: center;
-    margin-bottom: 2.4rem;
+    margin-bottom: 2.8rem;
 }
 
 .skill__box {
@@ -472,7 +472,7 @@ img {
 
 .skill__group {
     display: grid;
-    align-items: flex-start;
+    align-content: flex-start;
     row-gap: 1.6rem;
 }
 
@@ -482,18 +482,17 @@ img {
 }
 
 .skill .bxs-badge-check {
-    color: var(--first-color);
     font-size: 1.6rem;
+    color: var(--first-color);
 }
 
 .skill__name {
-    font-weight: var(--font-medium);
     font-size: var(--normal-font-size);
-    line-height: 19PX;
+    font-weight: var(--font-medium);
+    line-height: 18px;
 }
 
 .skill__levels {
-    font-weight: var(--font-medium);
     font-size: var(--tiny-font-size);
 }
 
@@ -1076,7 +1075,7 @@ img {
     }
 
     .skill__container {
-        grid-template-columns: repeat(1, 450px);
+        grid-template-columns: repeat(2, 450px);
         column-gap: 4.8rem;
     }
 
