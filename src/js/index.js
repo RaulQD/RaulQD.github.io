@@ -1,7 +1,10 @@
-
 const header = document.querySelector('header');
+
+
+
 /** ----SCROLL HEADER -----*/
-function scrollHeader() {
+function scrollHeader()
+{
     if (this.scrollY >= 50) {
         header.classList.add('scroll-header');
     } else {
@@ -12,10 +15,12 @@ window.addEventListener('scroll', scrollHeader);
 /**----SCROLL  ----- */
 
 const sections = document.querySelectorAll('section[id]');
-function scrollActive() {
+function scrollActive()
+{
     const scrollY = window.scrollY;
 
-    sections.forEach(current => {
+    sections.forEach(current =>
+    {
 
         const sectionHeight = current.offsetHeight;
         const sectionTop = current.offsetTop - 58;
@@ -31,7 +36,8 @@ function scrollActive() {
 window.addEventListener('scroll', scrollActive);
 
 /**------ SCROLL UP---- */
-function scrollUp() {
+function scrollUp()
+{
     const scrollUp = document.querySelector('#scroll-up');
     if (this.scrollY >= 550) {
         scrollUp.classList.add('show-scroll');
@@ -44,18 +50,21 @@ window.addEventListener('scroll', scrollUp);
 
 /** ----- RESPONSIVE SIDEBAR MENU MOBILE */
 
-const showMenu = (toggleId, navId, closeId) => {
+const showMenu = (toggleId, navId, closeId) =>
+{
     const toggle = document.getElementById(toggleId),
         nav = document.getElementById(navId),
         closeID = document.getElementById(closeId);
 
     if (toggle && nav) {
-        toggle.addEventListener('click', () => {
+        toggle.addEventListener('click', () =>
+        {
             nav.classList.toggle('show');
         })
     }
     if (closeID && nav) {
-        closeID.addEventListener('click', () => {
+        closeID.addEventListener('click', () =>
+        {
             nav.classList.remove('show');
         })
     }
@@ -65,7 +74,8 @@ showMenu('nav-toggle', 'nav-menu', 'nav-close');
 /*---- ACTIVAR Y REMOVER MENU ---- */
 const navLink = document.querySelectorAll('.nav__link');
 
-function linkAction() {
+function linkAction()
+{
     navLink.forEach(n => n.classList.remove('active-link'))
     this.classList.add('active-link');
 

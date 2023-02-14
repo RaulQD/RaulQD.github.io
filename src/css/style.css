@@ -387,6 +387,7 @@ img {
 }
 
 /*----- ABOUT ----- */
+
 .about__container {
     row-gap: 4rem;
 }
@@ -620,7 +621,9 @@ img {
     background: var(--container-color);
     padding: 1.6rem;
     border-radius: 1.2rem;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .contact__card-icon {
@@ -913,6 +916,7 @@ img {
     }
 
     .contact__card {
+        text-align: center;
         padding: 3rem;
     }
 
@@ -990,6 +994,7 @@ img {
 }
 
 @media screen and (min-width: 992px) {
+    
     .container {
         margin-left: auto;
         margin-right: auto;
