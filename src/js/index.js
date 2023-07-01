@@ -1,5 +1,10 @@
 const header = document.querySelector('.header');
+const footerIns = document.querySelector('.footer_insta');
 
+footerIns.addEventListener('click', footerInstagram);
+function footerInstagram(e){
+    e.preventDefault();
+}
 /** ----SCROLL HEADER -----*/
 function scrollHeader()
 {

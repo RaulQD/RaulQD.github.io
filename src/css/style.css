@@ -356,7 +356,7 @@ img {
     font-size: 1.6rem;
     color: var(--first-color);
     display: flex;
-    transition: .4s;
+    transition: .4s ease-in-out;; 
 }
 
 .home__social-link:hover {
@@ -791,6 +791,7 @@ img {
     transition-duration: .3s;
     transition-property: opacity;
     animation: up 3s infinite;
+    transition-timing-function: ease-in-out;
 
 }
 
