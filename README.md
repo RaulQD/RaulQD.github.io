@@ -2,7 +2,7 @@
 [![portfolio.png](https://i.postimg.cc/Kzqx2fSb/portfolio.png)](https://postimg.cc/R6Hj1cZp)
 
 ## Descripción
-Este es un portfolio creado con HTML CSS y JavaScript usando la metologia BEM.
+Este es un portfolio creado con HTML CSS usando la metologia BEM y JavaScript.
 
 ## Autor 
 **Raul Quispe**
