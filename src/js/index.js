@@ -1,6 +1,4 @@
-const header = document.querySelector('header');
-
-
+const header = document.querySelector('.header');
 
 /** ----SCROLL HEADER -----*/
 function scrollHeader()
@@ -12,13 +10,14 @@ function scrollHeader()
     }
 }
 window.addEventListener('scroll', scrollHeader);
-/**----SCROLL  ----- */
 
+/**----SCROLL  ----- */
 const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav__menu a');
 function scrollActive()
 {
     const scrollY = window.scrollY;
-
+    let activeLink = null;
     sections.forEach(current =>
     {
 
@@ -27,11 +26,14 @@ function scrollActive()
         const sectionID = current.getAttribute('id');
 
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            document.querySelector('a[href*=' + sectionID + ']').classList.add('active-link');
-        } else {
-            document.querySelector('a[href*=' + sectionID + ']').classList.remove('active-link');
-        }
-    });
+            activeLink = document.querySelector(`.nav__menu a[href*=${sectionID}]`);
+          }
+        });
+    if (activeLink) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active-link', link === activeLink);
+        });
+      }
 }
 window.addEventListener('scroll', scrollActive);
 
