@@ -491,8 +491,11 @@ img {
     font-size: var(--normal-font-size);
     font-weight: var(--font-medium);
     line-height: 18px;
+    margin-bottom: 18px;
 }
-
+.skill__group .skill__name:nth-child(5){
+    margin-bottom: 0;
+}
 .skill__levels {
     font-size: var(--tiny-font-size);
 }
